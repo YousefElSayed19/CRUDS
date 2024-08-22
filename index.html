@@ -1,0 +1,68 @@
+<!DOCTYPE html >
+<html>
+  <head>
+    <title>CRUDS</title>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="./css/all.min.css"/>
+    <link rel="stylesheet" href="./css/bootstrap.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  </head>
+  <body>  
+    <div class="container">
+      <div class="CRUDS">
+        <div class="title">
+          <h1>CRUDS</h1>
+          <p>CREATE REAT UPDATE DELETE SEARCH</p>
+        </div>
+        <div class="inPuts">
+          <input class="w-100" type="text" placeholder="title" id="title"/>
+          <div class="total">
+            <input onkeyup="total()" type="number" placeholder="price" id="price"/>
+            <input onkeyup="total()" type="number" placeholder="taxes" id="taxes"/>
+            <input onkeyup="total()" type="number" placeholder="ads" id="ads"/>
+            <input onkeyup="total()" type="number" placeholder="descound" id="descound"/><span id="resultOfTotal"> </span>
+          </div>
+          <input class="w-100" type="number" placeholder="count" id="count"/>
+          <input class="w-100" type="text" placeholder="category" id="category"/>
+          <button class="w-100" onclick="getData()" id="create">Create</button>
+          <input class="w-100" type="text" placeholder="Search By Title." id="search" onkeyup="searchData(this.value)"/>
+          <div class="buttonSearch w-100 d-flex justify-content-between" id="buttonSearch">
+            <button onclick="getSearchmode(this.id)" id="searchTitle">Search By Title.</button>
+            <button onclick="getSearchmode(this.id)" id="searchCategory">Search By Category.</button>
+          </div>
+          <div class="deleteAll">
+            <button class="bot w-100" onclick="deleteAll()">Delete All</button>
+          </div>
+        </div>
+        <div class="outPuts w-100">
+          <table class="w-100"> 
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>TITLE</th>
+                <th>PRICE</th>
+                <th>TAXES</th>
+                <th>ADS</th>
+                <th>DISCOUNT</th>
+                <th>TOTAL</th>
+                <th>CATEGORY</th>
+                <th>UPDATE</th>
+                <th>DELETE</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="./js/main.js "></script>
+    <script src="./js/all.min.js "></script>
+    <script src="./js/bootstrap.bundle.min.js "></script>
+  </body>
+</html>

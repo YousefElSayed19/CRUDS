@@ -1,0 +1,48 @@
+doctype html 
+html
+    head
+        title CRUDS
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        include links/style.pug
+    body   
+        .container
+            .CRUDS
+                .title
+                    h1 CRUDS
+                    p CREATE REAT UPDATE DELETE SEARCH
+                .inPuts
+                    input(type='text' placeholder="title" id='title').w-100
+                    .total
+                        input(onkeyup='total()' type='number' placeholder="price" id='price')
+                        input(onkeyup='total()' type='number' placeholder="taxes" id='taxes')
+                        input(onkeyup='total()' type='number' placeholder="ads" id='ads')
+                        input(onkeyup='total()' type='number' placeholder="descound" id='descound')
+                        span#resultOfTotal 
+                    input(type='number' placeholder="count" id='count').w-100
+                    input(type='text' placeholder="category" id='category').w-100
+                    button(onclick="getData()")#create.w-100 Create
+                    input(type='text' placeholder="Search By Title." id='search' onkeyup="searchData(this.value)").w-100
+                    .buttonSearch#buttonSearch.w-100.d-flex.justify-content-between
+                        button(onclick='getSearchmode(this.id)')#searchTitle Search By Title.
+                        button(onclick='getSearchmode(this.id)')#searchCategory Search By Category.
+                    .deleteAll
+                        button(onclick="deleteAll()").bot.w-100 Delete All
+                .outPuts.w-100
+                    table.w-100 
+                        thead
+                            tr
+                                th ID
+                                th TITLE
+                                th PRICE
+                                th TAXES
+                                th ADS
+                                th DISCOUNT
+                                th TOTAL
+                                th CATEGORY
+                                th UPDATE
+                                th DELETE
+                        tbody#tbody
+        include links/script.pug
+
